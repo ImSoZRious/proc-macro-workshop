@@ -9,9 +9,7 @@ fn expand(ts: TokenStream, ident: &Ident, n: usize) -> Result<TokenStream> {
 
     let mut iter = ts.into_iter();
 
-    let mut a = iter.next();
-    let mut b = iter.next();
-    let mut c = iter.next();
+    utils::init!(a, b, c; iter.next());
 
     while a.is_some() {
         match (&a, &b, &c) {
